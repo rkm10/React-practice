@@ -1,14 +1,17 @@
-import React from 'react'
+import React from "react";
 
 export default function Secondcomponent() {
-    let raj = "it a new project"
-    let menu = (<ul>
-        <li className='test'>{raj}</li>
-        <li id='test'>please think</li>
-    </ul>)
+    let raj = "it a new project";
+
     function Menu() {
-        return <h1>hello world</h1>
+        return (
+            <div>
+                <ul>
+                    <li className="test">{raj}</li>
+                    <li id="test">please think</li>
+                </ul>
+            </div>
+        );
     }
-    return (menu, <Menu></Menu>
-    )
+    return <Menu></Menu>;
 }
