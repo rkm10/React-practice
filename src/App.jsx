@@ -1,8 +1,6 @@
 
 import Firstcomponent from "./components/Firstcomponent";
 
-
-
 function App() {
   return (
     <>
