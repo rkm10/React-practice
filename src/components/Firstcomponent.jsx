@@ -1,16 +1,13 @@
+export default function Firstcomponent(p) {
 
-
-import React, { Component } from "react"
-
-
-export default class Firstcomponent extends Component {
-
-    render() {
-        return (
-            <>
-                <h3>Name: {this.props.name}</h3>
-                <h3>Age: {this.props.age}</h3>
-            </>
-        )
-    }
+    return (
+        <>
+            <div style={{ width: 300, border: '2px solid black', margin: '20px', padding: '20px', display: "flex" }}>
+                <h3>ID: {p.id}</h3>
+                <h3>Name: {p.name}</h3>
+                <h3>Age: {p.age}</h3>
+                <p>Place:{p.place}</p>
+            </div>
+        </>
+    )
 }
