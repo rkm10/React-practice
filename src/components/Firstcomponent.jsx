@@ -1,19 +1,11 @@
-
-
-export default function Firstcomponent() {
-    let name = "Rajkumar"
+export default function Firstcomponent(p) {
+    console.log(p)
     return (
         <>
-            {sum(17, 71)}
-            <input type="checkbox" id="sub" />
-            <label htmlFor="sub" >Subscribe to </label>
-            {name}
+            <h3>Name: {p.name}</h3>
+            <h3>Age: {p.age}</h3>
         </>
     )
-}
-
-function sum(num1, num2) {
-    return num1 * num2
 }
 
 
