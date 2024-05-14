@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 export default function Firstcomponent(p) {
 
     return (
@@ -8,6 +9,20 @@ export default function Firstcomponent(p) {
                 <h3>Age: {p.age}</h3>
                 <p>Place:{p.place}</p>
             </div>
+            <Ppa />
         </>
     )
+}
+
+const Ppa = () => {
+    let [counter, updateCounter] = useState(0)
+    console.log(counter)
+    return (
+        <>
+            <h1>Counter Value: {counter}</h1>
+            <button onClick={() => { updateCounter(++counter) }}>Increment</button>
+            <button onClick={() => { updateCounter(--counter) }}>Decrement</button>
+        </>
+    )
+
 }

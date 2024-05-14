@@ -1,5 +1,6 @@
 
 import Firstcomponent from "./components/Firstcomponent";
+import Display from "./components/Secondcomponent";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         )
 
       }
+      <Display />
     </>
   );
 }
