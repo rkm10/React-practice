@@ -1,10 +1,20 @@
+import React, { useState } from "react"
+
 export default function Display() {
 
     return (
-        < div style={{ display: 'flex', columnGap: "20px" }}>
-            <FlexItems />
-            <ButtonItems />
-        </div>
+        <>
+            < div style={{ display: 'flex', columnGap: "20px", padding: '20px', border: '2px solid black', margin: '20px' }}>
+                <FlexItems />
+                <ButtonItems />
+            </div>
+            <div style={{ padding: '20px', display: 'flex', columnGap: "20px", alignItems: 'center', border: '2px solid black', margin: '20px' }}>
+                <Price />
+            </div>
+            <div style={{ padding: '20px', display: 'flex', columnGap: "20px", alignItems: 'center', border: '2px solid black', margin: '20px' }}>
+                <StateUse />
+            </div>
+        </>
     )
 }
 
@@ -32,5 +42,66 @@ const ButtonItems = () => {
     )
 }
 
+class Price extends React.Component {
+    state = {
+        product: 'one plus',
+        price: 61000
+    }
 
+    constructor() {
+        super();
+        this.updatePrice = this.updatePrice.bind(this)
+    }
+
+    render() {
+        return (
+            <>
+                <h1>State method along with bind</h1>
+                <h3>{this.state.product}</h3>
+                <h4>{this.state.price}</h4>
+                <input type="number" id="price" />
+                <button onClick={this.updatePrice}>Update</button>
+            </>
+        )
+    }
+    updatePrice() {
+        let p = document.getElementById('price').value
+        console.log(p)
+        this.setState({
+            price: p
+        }, () => {
+            console.log(this.state)
+        }
+        )
+    }
+}
+
+
+
+
+const StateUse = () => {
+
+    let pric = 24000;
+    let [productname, updateName] = useState('one plus nord')
+
+    return (
+        <>
+            <h3>product: {productname}</h3>
+            <h4>price: {pric}</h4>
+            <input type="text" id="pname" />
+            <button onClick={() => {
+                let pname = document.getElementById('pname').value;
+                // productname = pname;
+                // updateName(pname)
+                updateName((prev) => {
+                    return prev + pname
+                })
+
+
+            }}>UpdateName</button>
+        </>
+    )
+
+
+}
 

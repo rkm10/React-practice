@@ -2,3 +2,8 @@
   color: aquamarine;
   background: brown;
 }
+
+body {
+  color: rgb(0, 0, 0);
+  background-color: blanchedalmond;
+}
