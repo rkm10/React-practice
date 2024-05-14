@@ -11,7 +11,7 @@ export default function Display() {
             <div style={{ padding: '20px', display: 'flex', columnGap: "20px", alignItems: 'center', border: '2px solid black', margin: '20px' }}>
                 <Price />
             </div>
-            <div style={{ padding: '20px', display: 'flex', columnGap: "20px", alignItems: 'center', border: '2px solid black', margin: '20px' }}>
+            <div style={{ padding: '30px', border: '2px solid black', margin: '20px', columnGap: '20px' }}>
                 <StateUse />
             </div>
         </>
@@ -81,24 +81,42 @@ class Price extends React.Component {
 
 const StateUse = () => {
 
-    let pric = 24000;
-    let [productname, updateName] = useState('one plus nord')
+    let [productname, updateName] = useState("Nord 2 One Plus")
+    let [pricz, updatePricz] = useState(24000);
+    let [moduleee, updateModuleee] = useState("2.0.53")
+    let [show, setShow] = useState(true);
+
+    const handleprice = () => {
+        setShow(false);
+        console.log("pricz", pricz);
+    }
+    const handleName = () => {
+        setShow(false);
+        console.log("productname", productname);
+    }
+    const handlemoduleee = () => {
+        setShow(false);
+        console.log("moduleee", moduleee)
+    }
 
     return (
         <>
             <h3>product: {productname}</h3>
-            <h4>price: {pric}</h4>
-            <input type="text" id="pname" />
-            <button onClick={() => {
-                let pname = document.getElementById('pname').value;
-                // productname = pname;
-                // updateName(pname)
-                updateName((prev) => {
-                    return prev + pname
-                })
+            <h4>price: {show ? "24000" : pricz}</h4>
+            <h3>Model:{show ? "2.0.53" : moduleee}</h3>
+            <div style={{ display: 'flex', columnGap: '20px' }}>
+                <input type="text" onChange={(e) => { updateName(e.target.value) }} />
+                <button onClick={handleName}>Update Name</button>
+            </div>
 
-
-            }}>UpdateName</button>
+            <div style={{ display: 'flex', columnGap: '20px' }}>
+                <input type="number" value={pricz} onChange={(e) => updatePricz(e.target.value)} />
+                <button onClick={handleprice}>Update price</button>
+            </div>
+            <div style={{ display: 'flex', columnGap: '20px' }}>
+                <input type="number" onChange={(e) => updateModuleee(e.target.value)} />
+                <button onClick={handlemoduleee}>Update Model</button>
+            </div>
         </>
     )
 
