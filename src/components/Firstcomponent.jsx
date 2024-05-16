@@ -48,7 +48,7 @@ class Pap extends React.Component {
                               this.setState({
                                     counter: --this.state.counter
                               })
-                        }}>Decrement</button>
+                        }}>Decrese</button>
 
                   </>
             )
