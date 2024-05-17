@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-export default function Firstcomponent() {
+export default function Firstcomponent(p) {
 
       return (
             <>
