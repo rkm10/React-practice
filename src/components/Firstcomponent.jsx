@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { Component, useState } from "react"
 export default function Firstcomponent(p) {
 
       return (
@@ -9,6 +9,7 @@ export default function Firstcomponent(p) {
                         <h3>Age: {p.age}</h3>
                         <p>Place:{p.place}</p>
                   </div>
+
                   <div style={{ border: '2px solid black', margin: '20px', padding: '20px' }}>
                         <Ppa />
                         <Pap />
@@ -49,9 +50,29 @@ class Pap extends React.Component {
                                     counter: --this.state.counter
                               })
                         }}>Decrese</button>
+                        <Lali />
 
                   </>
             )
       }
 }
 
+class Lali extends Component {
+
+      constructor() {
+            super()
+            this.state = {
+                  x: 10
+            }
+      }
+
+      render() {
+            return (
+                  <>
+                        <h1>This is class component</h1>
+                        <p>{this.state.x}</p>
+                        <button onClick={() => { this.setState({ x: this.state.x + 10 }) }}>increase</button >
+                  </>
+            )
+      }
+}
