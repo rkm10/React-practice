@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react"
+import Child from "./child"
 export default function Firstcomponent(p) {
 
       return (
@@ -62,15 +63,18 @@ class Lali extends Component {
       constructor() {
             super()
             this.state = {
-                  x: 10
+                  x: 10,
+                  show: true
             }
       }
 
       render() {
             return (
                   <>
-                        <h1>This is class component</h1>
-                        <p>{this.state.x}</p>
+                        <h1>Parent component</h1>
+                        {this.state.show && <Child data={this.state.x} />}
+                        <button onClick={() => { this.setState({ show: false }) }}>hide</button >
+                        <button onClick={() => { this.setState({ show: true }) }}>show</button >
                         <button onClick={() => { this.setState({ x: this.state.x + 10 }) }}>increase</button >
                   </>
             )
