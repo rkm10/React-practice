@@ -1,4 +1,28 @@
 import React, { useState } from "react"
+import Firstcomponent from "./Firstcomponent"
+
+
+
+let firstcomponents = [
+      {
+            id: 21,
+            name: 'Raj',
+            age: 25,
+            place: 'Bangalore'
+      },
+      {
+            id: 22,
+            name: 'kumar',
+            age: 25,
+            place: 'Bangalore'
+      },
+      {
+            id: 23,
+            name: 'RajKumar',
+            age: 27,
+            place: 'Bangalore'
+      }
+]
 
 export default function Display() {
 
@@ -14,6 +38,14 @@ export default function Display() {
                   <div style={{ padding: '30px', border: '2px solid black', margin: '20px', columnGap: '20px' }}>
                         <StateUse />
                   </div>
+                  {
+                        firstcomponents.map(
+                              (f) => {
+                                    return <Firstcomponent key={f.id} id={f.id} name={f.name} age={f.age} place={f.place} />
+                              }
+                        )
+
+                  }
             </>
       )
 }
