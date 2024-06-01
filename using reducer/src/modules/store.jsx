@@ -21,7 +21,6 @@ const initialState = {
 //       else
 //             return state
 // }
-
 // -----------------switch case---------------------//
 
 function accountReducer(state = initialState, action) {

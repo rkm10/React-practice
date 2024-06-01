@@ -7,10 +7,10 @@ export function withdraw(amount) {
 }
 
 export function userName(name) {
-      return { type: "updateName", payload: name };
+      return { type: "nameUpdate", payload: name };
 }
 
 export function mobile(mobile) {
-      return { type: "updateMobile", payload: mobile };
+      return { type: "mobileUpdate", payload: mobile };
 }
 

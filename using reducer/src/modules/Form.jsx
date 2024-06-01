@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { deposit } from "./Actions"
+import { deposit, withdraw, userName, mobile } from "./Actions"
 
 export default function Form() {
       let dispatch = useDispatch()
@@ -20,15 +20,15 @@ export default function Form() {
                                     // }}
                                     />
                                     <button className=" btn glass" onClick={() => { dispatch(deposit(Amount)); updateAmount("") }}>Deposit</button>
-                                    <button className=" btn glass" onClick={() => { dispatch({ type: "withdraw", payload: Amount }); updateAmount("") }}>withdraw</button>
+                                    <button className=" btn glass" onClick={() => { dispatch(withdraw(Amount)); updateAmount("") }}>withdraw</button>
                               </div>
                               <div className="card-actions justify-evenly" >
                                     <input className="input input-bordered join-item" type="text" placeholder="Enter User name" value={Name} onChange={e => updateName(e.target.value)} />
-                                    <button className=" btn glass" onClick={() => { dispatch({ type: "nameUpdate", payload: Name }); updateName("") }}>update name</button>
+                                    <button className=" btn glass" onClick={() => { dispatch(userName(Name)); updateName("") }}>update name</button>
                               </div>
                               <div className="card-actions justify-evenly" >
-                                    <input className="input input-bordered join-item" type="text" placeholder="Ener phone number" value={Mobile} onChange={e => updateMobile(e.target.value)} />
-                                    <button className=" btn glass" onClick={() => { dispatch({ type: "mobileUpdate", payload: Mobile }); updateMobile("") }}>update name</button>
+                                    <input className="input input-bordered join-item" type="text" placeholder="Enter phone number" value={Mobile} onChange={e => updateMobile(e.target.value)} />
+                                    <button className=" btn glass" onClick={() => { dispatch(mobile(Mobile)); updateMobile("") }}>update name</button>
                               </div>
                         </div>
                         <div >
