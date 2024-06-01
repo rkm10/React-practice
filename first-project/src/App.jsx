@@ -1,5 +1,6 @@
 // import Display from "./components/Secondcomponent";
 import { lazy, Suspense, useState } from "react";
+import Display from "./components/Secondcomponent";
 
 const Form = lazy(() => import("./forms"))
 
@@ -15,6 +16,7 @@ function App() {
                         <button className="btn btn-primary" onClick={() => {
                               setShow(true)
                         }}>open</button>
+                        <Display />
                   </div>
                   {
                         show == true && (
