@@ -35,6 +35,18 @@
       "category": "laptops",
       "price": "124124235423",
       "id": "9dec"
+    },
+    {
+      "id": "6664",
+      "name": "dell",
+      "category": "mobiles",
+      "price": "21312"
+    },
+    {
+      "id": "5c8c",
+      "name": "wqerfwe",
+      "category": "mobiles",
+      "price": "213213"
     }
   ]
 }
