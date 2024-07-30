@@ -1,0 +1,20 @@
+.acquisitions {
+    padding: 20px;
+    color: white;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.screen_head {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #005f67, #0390a3, #027c8a);
+    width: 50%;
+    height: 80px;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
